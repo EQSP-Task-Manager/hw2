@@ -1,0 +1,12 @@
+name: 'Spell check README.md'
+description: 'Spell check README.md with aspell'
+inputs:
+  file-path:
+    description: 'Path to README.md file'
+    required: false
+    default: './README.md'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file-path }}
